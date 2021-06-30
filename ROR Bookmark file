@@ -1,0 +1,38 @@
+============ Rails Bookmark List ==========
+ 
+ 
+ 1= Rails Select ==========================
+   
+   1. https://www.youtube.com/watch?v=FWIXWutlxIg
+   
+   2. https://stackoverflow.com/questions/22111088/how-do-i-use-the-bootstrap-form-select-css-with-a-rails-model/22111122
+   
+   3. https://gorails.com/forum/how-do-i-populate-form-control-with-data-from-database-the-ror-way
+ 
+ 2= ROR Errors ==========================
+    
+    1. https://stackoverflow.com/questions/32491201/could-not-find-gem-pg-0-12-4-ruby-in-any-of-the-gem-sources-listed-in-your
+ 
+    2. https://github.com/CocoaPods/CocoaPods/issues/10388
+    
+    3. https://github.com/Nate711/ruby/edit/master/test/test_helper.rb
+    
+    4. https://stackoverflow.com/questions/7154664/ruby-sqlite3busyexception-database-is-locked
+    
+    5. https://stackoverflow.com/questions/55725399/trouble-with-will-paginate-method
+ 
+ 3= Postgre SQL ==========================
+ 
+    1. https://stackoverflow.com/questions/34203765/activerecordnodatabaseerror-fatal-database-db-development-postgresql-does-n
+    
+    2. https://www.ionos.com/digitalguide/server/know-how/use-postgresql-with-ruby-on-rails-on-ubuntu/
+    
+    3. https://linuxhint.com/install_postgresql_-ubuntu/
+ 
+ 4= Creating Modal ==========================
+ 
+    1. https://stackoverflow.com/questions/39370567/rails-choosing-an-object-on-button-click-and-showing-info-on-modal
+    
+ 5= Letter Opener ==========================
+
+    1. https://github.com/ryanb/letter_opener
