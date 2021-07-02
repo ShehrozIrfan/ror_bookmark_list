@@ -40,3 +40,8 @@
  6= ROR-JS ==========================
  
     1.https://stackoverflow.com/questions/18602331/why-is-this-jquery-click-function-not-working
+    
+ 7= ROR-AJAX ==========================
+    
+    Unprocessable Entity:
+    1. https://api.rubyonrails.org/v5.0/classes/ActionController/RequestForgeryProtection.html
