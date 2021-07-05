@@ -45,3 +45,8 @@
     
     Unprocessable Entity:
     1. https://api.rubyonrails.org/v5.0/classes/ActionController/RequestForgeryProtection.html
+    
+ 8= Stripe 15 days Trial ==========================
+ 
+    1. https://github.com/stripe/stripe-ruby/issues/486
+    2. https://github.com/stripe/stripe-ruby/issues/540 
