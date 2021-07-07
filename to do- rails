@@ -1,0 +1,248 @@
+CSRF Tokens
+member routes vs collection routes
+call backs
+has one, belongs_to, polymorphic association
+concerns- why we use it.
+fat controller and thin models
+where and joins in active record
+asset pipelines
+mail sending, active jobs
+d/bw render and redirect_to
+d/bw form_with and form_for
+what are helpers
+what is rake
+
+
+
+
+<%= f.label :select_role %>
+                        <%= f.select(:role,User::ROLE_LIST)%>
+                        
+                        
+                        Hi <%= @user.name %>,
+Welcome to the Sample App! Click on the link below to activate
+your account:
+<%= edit_account_activation_url(@user.activation_token, email:
+@user.email) %>
+
+
+
+<h1>Bugzilla Test App</h1>
+<p>Hi <%= @user.name %>,</p>
+<p>
+Welcome to the Bugzilla Test App! Click on the link below to activate
+your account:
+</p>
+<%= link_to "Activate",
+edit_account_activation_url(@user.activation_token,email:@user.email) %>
+
+
+<p><b>Title:</b> <%= bug.title %></p>
+                                <p><b>Description: </b> <%= bug.description %></p>
+                                <p><b>Priority: </b><%= bug.priority %></p>
+                                <p><b>Est. days to complete: </b><%= bug.days_to_complete %></p>
+                                <p><b>Status: </b><%= bug.status %></p>
+                                
+                                <%= link_to 'Assign Bug', edit_assign_path(bug), class: 'btn btn-secondary' %>
+                                
+                                
+                                
+                                @all_users = User.all
+        @users = []
+        @devlopers = []
+        @all_users.each do |user|
+            if user.role == 1 or user.role == 2
+                @users << user.name
+            end
+            if user.role == 2
+                @developers << user.name
+            end
+        end
+        
+        
+        <%= form_for(model: @user, local:true) do |f| %>
+                            
+                            <%= f.label :role %>    
+                            <%= f.select(:role, options_for_select([['QA', 1], ['Developer', 2],]), {}, {class: "form-control mb-2"}) %>
+    
+                          
+    
+                    
+                            <%= f.submit "Change", class: "btn btn-primary form-control mt-3" %>
+                        <% end %>
+                        
+                        
+                        
+                        
+                        
+                        
+                        puts "here\n"*10
+        puts params.inspect
+        puts "\n"*10
+        
+        
+        
+        
+        
+        
+        
+        
+        <% provide(:title, "Assign Bug") %>
+<!Doctype html>
+<html>
+    <head><title><%= yield(:title) %></title></head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-md-offset-3">
+                    <h2 class="text-center">Assign Bug</h2>
+                    <%= form_with(model: @bug, local:true) do |f| %>
+        
+                        <%= f.label :assign_to %>    
+                        <div>
+                            <%= f.select :assigned_to, @users %>
+                        </div>
+                        
+                        <%= f.submit "Assign", class: "btn btn-primary form-control mt-3" %>
+                    
+                    <% end %>
+                    <%= link_to 'Back', bugs_path , class: "btn btn-secondary form-control mt-3" %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% if current_user.role == 0 %>
+                        <%= f.label :assign_to %>    
+                        <div>
+                            <%= f.select :assigned_to, @users %>
+                        </div>
+                        <% end %>
+
+                        <% if current_user.role == 1 %>
+                        <%= f.label :assign_to %>    
+                        <div>
+                            <%= f.select :assigned_to, @developers %>
+                        </div>
+                        <% end %>
+                        
+                        
+                        
+                        ========================= LAMPP ==========================
+                        sudo /opt/lampp/lampp start
+                        
+                        
+                        
+                        
+                        ========================= postgresql ==========================
+                        
+                                        sudo systemctl restart postgresql
+                        
+                        ========================= INTER APP ==========================
+                        
+                        
+                        
+
+                        
+                        
+                          - if @user.errors.any?
+                  %div
+                    Form contain #{pluralize(@user.errors.count, "error")}
+                  %ul
+                    - @user.errors.full_messages.each do |msg|
+                      %li= msg
+                      
+                      
+                      
+                      
+                      <% if @user.errors.any? %>
+<div class="alert alert-danger">
+Form contain <%= pluralize(@user.errors.count, "error")%>
+</div>
+<ul>
+    <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+
+
+
+
+= devise_error_messages!
+ - flash.each do |key, value|
+  %div(class="flash #{key}")
+   = value
+
+
+
+$.post("https://interappusa.com/creatorcheckout/checkcoupon.php", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+      });  
+      
+      
+      
+:javascript
+  $(document).ready(function() {
+    $("#btn_trailcode").click(function (e) {
+      e.preventDefault();
+      coupon_code = $('.trailcode').val();
+      alert(coupon_code);
+
+      $.ajax({
+          type: "POST",
+          url: "/check_coupon_code",
+          dataType: 'json',
+          data: {coupon: coupon_code}
+      }).done(function (data) {
+          console.log(data);
+          if (data) {
+              console.log("Valid Code!");
+          } else {
+              console.log("Invalid Code!");
+          }
+      }).fail(function () {
+          console.log("error");
+      })
+
+    });
+  });
+    
+    
+    
+    
+    
+    $('#btn_after_trail_pay').click(function(e)) {
+      e.preventDefault();
+      alert("Hello");
+    }
+    %button#btn_trailcode.btn.btn-success.mt-4.mb-4{formnovalidate: ""}
+                    Apply
+                    
+                    = link_to 'Apply', '', id: "btn_trailcode", class: "btn btn-success mt-4 mb-4", remote: true
+    
+    %button#btn_trailcode(class="btn btn-success mt-4 mb-4"){formnovalidate: ""}
+    
+    =========================== un processable request ==============================
+
+beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+
+
+
+========================================== RVM =======================
+rvm list
+rvm use 2.4.1
+
