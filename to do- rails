@@ -246,3 +246,49 @@ beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="cs
 rvm list
 rvm use 2.4.1
 
+
+
+============================= GIT ===========================
+
+git reset HEAD^g
+
+git add file_path
+
+
+===================== CSS PROJECT =======================
+just above calendar wrap
+<div class="border-divider col-md-1"></div>
+
+
+$(".start-time").val('');
+$(".end-time").val('');
+
+
+$('.btn_cancel').click(function() {
+      alert("Hi");
+      var time_start = $('.start-time').val();
+      var time_end = $('.end-time').val();
+
+      alert(time_start);
+      alert(time_end);
+
+      time_start = '';
+      time_end = '';
+
+      alert(time_start);
+      alert(time_end);
+     
+
+    });
+    
+    
+    
+    <script>
+$(document).ready(function(){
+    $("#addMeetingModal").on('show.bs.modal', function(){
+      $(".start-time").val('');
+      $(".end-time").val('');
+    });
+});
+</script>
+
