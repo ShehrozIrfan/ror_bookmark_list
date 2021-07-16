@@ -292,3 +292,86 @@ $(document).ready(function(){
 });
 </script>
 
+
+<script>
+
+
+var date, day, elm;
+        console.log(e.target);
+        elm = $(e.target);
+        day = elm.text();
+        date = elm.closest('#calendarWrap').find('.date-heading').text();
+        $('#currentDate').text(day + ' ' + date);
+        $('#meetingDate').val(day + ' ' + date);
+
+</script>
+
+
+
+
+
+
+
+
+
+============================================================
+CHIME MEETING MODAL SHOW
+============================================================
+
+<script>
+$(document).on('click', '.fa-phone', function() {
+  alert("Hello");
+  $.ajax({
+    traditional: true,
+    type: "POST",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    url: "/check_role",
+    dataType: 'json',
+    data: ""
+    }).done(function (data) {
+      console.log(data);
+    }).fail(function () {
+      console.log("error");
+    })
+});
+</script>
+
+
+====================================================
+
+QUERIES TO ASK
+
+
+
+====================================================
+
+1. Meeting_note is saving in database or not?
+
+
+====================================================
+
+<%= stylesheet_link_tag "meeting_modal.css.scss" %>
+
+<%= stylesheet_link_tag "meeting_modal.css.scss" %>
+
+in calendar.html.erb
+<% javascript_tag 'day_add_modal.js' %>
+
+
+
+
+git rebase
+git merge
+git soft reset/ hard reset
+git squash
+
+
+
+====================================================
+
+SEND GRID API KEY
+
+'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'
+
+
+======================================================
