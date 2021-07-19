@@ -398,3 +398,17 @@ PERSON CARE - SHOWING ERRORS ON MODAL
 //         alert("Clicked..selected!");
 //     }
 // });
+
+
+==========================================================
+
+<div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="alert alert-danger add-modal-form-error">
+                <ul class="add-modal-error-list">
+                  <li class="add-modal-select-tick-error"></li>
+                  <li class="add-modal-time-error"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
