@@ -412,3 +412,69 @@ PERSON CARE - SHOWING ERRORS ON MODAL
               </div>
             </div>
           </div>
+          
+          
+===========================================================
+//edit-modal-errors
+$(document).on('click', '.edit_modal_btn_apply', function(e) {
+    var edit_reason = $('.edit-modal-reason').val();
+    var edit_start_time = $('.edit-modal-start-time').val();
+    var edit_end_time = $('.edit-modal-end-time').val();
+
+    var start_t = moment(edit_start_time, 'hh:mm:aa')
+    var end_t = moment(edit_end_time, 'hh:mm:aa')
+
+    var checkTime = validateTime(start_t, end_t);
+
+    if(checkTime) {
+        e.preventDefault();
+        $('.edit-modal-form-error').text("Invalid start/end time");
+        $('.edit-modal-form-error').css('display','block');
+    }
+    else if(edit_reason.trim() == '') {
+        e.preventDefault();
+        $('.edit-modal-form-error').text("Reason can't be blank");
+        $('.edit-modal-form-error').css('display', 'block');
+    }
+
+})
+
+
+
+<div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="alert alert-danger edit-modal-form-error"></div>
+                </div>
+            </div>
+            
+            
+            
+            .edit-modal-form-error {
+    display: none;
+  }
+  
+  
+  <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="alert alert-danger add-modal-form-error">
+                <ul class="add-modal-error-list">
+                  <li class="add-modal-select-tick-error"></li>
+                  <li class="add-modal-time-error"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          ==================================
+          
+          <%= month_calendar(events: meetings) do |date, meetings| %>
+    <div class="month-day"><%= date.day %></div>
+
+    <% meetings.each do |meeting| %>
+    <% end %>
+<% end %>
+
+
+=================================
+
+<%= render :partial => 'shared/show_slots' %>
