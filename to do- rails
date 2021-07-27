@@ -478,3 +478,16 @@ $(document).on('click', '.edit_modal_btn_apply', function(e) {
 =================================
 
 <%= render :partial => 'shared/show_slots' %>
+
+
+
+
+===================================
+
+Button Disable 
+
+===================================
+
+<%= link_to mobile_app_path(meeting) do %>
+                                <i class="fas fa-phone-alt mobile-icon green-icon "></i>
+                            <% end %>
