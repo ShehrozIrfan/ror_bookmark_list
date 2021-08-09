@@ -491,3 +491,59 @@ Button Disable
 <%= link_to mobile_app_path(meeting) do %>
                                 <i class="fas fa-phone-alt mobile-icon green-icon "></i>
                             <% end %>
+                            
+                            
+====================================
+
+Add meeting modal
+
+
+<div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="alert alert-danger add-modal-form-error">
+                <ul class="add-modal-error-list">
+                  <li class="add-modal-select-tick-error"></li>
+                  <li class="add-modal-time-error"></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          
+            .add-modal-select-tick-error {
+    display: none;
+  }
+  .add-modal-time-error {
+    display: none;
+  }
+  ==============================================
+  
+  var current_date = moment(moment().format("DD/MM/YYYY"),'DD/MM/YYYY');
+
+var selected_date = moment(moment($('#edit-date-heading').text()).format("DD/MM/YYYY"),'DD/MM/YYYY');
+
+if(selected_date.isAfter(current_date)) {
+  $('#editMeetingModal').modal({
+    backdrop: 'static',
+    keyboard: false
+  });
+
+  $('#editMeetingModal').modal('show');
+  $('#editMeetingModal').html("<%= escape_javascript render(:partial => 'shared/edit_meeting_modal', locals: { meeting: @meeting, current_user_id: @current_user_id}) %>");
+  $('.time').datetimepicker({format: 'LT'})
+    $('.date').datetimepicker({
+        viewMode: 'years',
+        format: 'DD MMM, YYYY'
+    });
+
+} else {
+  $('#altEditMeetingModal').modal({
+    backdrop: 'static',
+    keyboard: false
+  });
+
+  $('#altEditMeetingModal').modal('show');
+  $('#altEditMeetingModal').html("<%= escape_javascript render(:partial => 'shared/alt_edit_meeting_modal') %>")
+}
+
+
